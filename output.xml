@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.8.2 on linux)" generated="20220717 14:11:49.189" rpa="false" schemaversion="3">
+<suite id="s1" name="testDemo1" source="/home/andy/my_first_project_rf/tests/testDemo1.robot">
+<test id="s1-t1" name="Validate UnSuccesful login" line="14">
+<kw name="open the browser with the Mortgage payment url">
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220717 14:11:49.320" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7f7afa39cb50&gt;</msg>
+<status status="PASS" starttime="20220717 14:11:49.319" endtime="20220717 14:11:49.320"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>test-type</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220717 14:11:49.320" endtime="20220717 14:11:49.320"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220717 14:11:49.321" endtime="20220717 14:11:49.321"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220717 14:11:49.321" endtime="20220717 14:11:49.321"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220717 14:11:49.321" endtime="20220717 14:11:49.321"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220717 14:11:49.321" endtime="20220717 14:11:49.321"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220717 14:11:49.322" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220717 14:11:49.322" endtime="20220717 14:11:49.968"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://rahulshettyacademy.com/loginpagePractise/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220717 14:11:49.969" level="INFO">Opening url 'https://rahulshettyacademy.com/loginpagePractise/'</msg>
+<status status="PASS" starttime="20220717 14:11:49.969" endtime="20220717 14:11:50.820"/>
+</kw>
+<status status="PASS" starttime="20220717 14:11:49.319" endtime="20220717 14:11:50.820"/>
+</kw>
+<kw name="Fill the login form">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>leqeueuxAndy</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220717 14:11:50.821" level="INFO">Typing text 'leqeueuxAndy' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20220717 14:11:50.821" endtime="20220717 14:11:50.927"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>12345678</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220717 14:11:50.927" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20220717 14:11:50.964" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220717 14:11:51.006" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220717 14:11:50.927" endtime="20220717 14:11:51.006"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>signInBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220717 14:11:51.007" level="INFO">Clicking button 'signInBtn'.</msg>
+<status status="PASS" starttime="20220717 14:11:51.006" endtime="20220717 14:11:51.060"/>
+</kw>
+<status status="PASS" starttime="20220717 14:11:50.820" endtime="20220717 14:11:51.061"/>
+</kw>
+<kw name="wait until it checks and display error message">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Error_Message_Login}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220717 14:11:51.061" endtime="20220717 14:11:53.220"/>
+</kw>
+<status status="PASS" starttime="20220717 14:11:51.061" endtime="20220717 14:11:53.221"/>
+</kw>
+<kw name="verify error message is correct">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${result}</var>
+<arg>${Error_Message_Login}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220717 14:11:53.251" level="INFO">${result} = Incorrect username/password.</msg>
+<status status="PASS" starttime="20220717 14:11:53.222" endtime="20220717 14:11:53.251"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${result}</arg>
+<arg>Incorrect username/password.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220717 14:11:53.251" endtime="20220717 14:11:53.252"/>
+</kw>
+<status status="PASS" starttime="20220717 14:11:53.221" endtime="20220717 14:11:53.252"/>
+</kw>
+<status status="PASS" starttime="20220717 14:11:49.318" endtime="20220717 14:11:53.252"/>
+</test>
+<doc>To validate the login form</doc>
+<status status="PASS" starttime="20220717 14:11:49.190" endtime="20220717 14:11:53.253"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="testDemo1">testDemo1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
