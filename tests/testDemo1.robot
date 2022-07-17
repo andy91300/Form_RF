@@ -2,7 +2,7 @@
 *** Settings ***
 Documentation   To validate the login form
 Library     SeleniumLibrary
-#Resource
+Test Teardown       Close Browser
 
 
 *** Variables ***
@@ -40,3 +40,7 @@ wait until it checks and display error message
 verify error message is correct
    ${result}=  Get Text    ${Error_Message_Login}
    Should Be Equal As Strings   ${result}       Incorrect username/password.
+   # same things that two line before
+   Element Text Should Be    ${Error_Message_Login}     Incorrect username/password.
+
+Close Browser Session
