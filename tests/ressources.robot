@@ -8,8 +8,9 @@ Library     SeleniumLibrary
 
 
 *** Variables ***
-${username}     lequeuxAndy
-${password}     abcdefg
+${username}      rahulshettyacademy
+${invalid_password}     abcdefg
+${valid_password}       learning
 ${url}          https://rahulshettyacademy.com/loginpagePractise/
 
 *** keywords ***
