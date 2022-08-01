@@ -4,7 +4,7 @@
 *** Settings ***
 Documentation   To validate the login form
 Test Setup      open the browser with the Mortgage payment url
-Test Teardown   Close Browser Session
+#Test Teardown   Close Browser Session
 Resource        ressources.robot
 
 *** Variables ***
