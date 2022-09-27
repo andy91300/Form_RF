@@ -11,7 +11,8 @@ ${Error_Message_Login}      css:.alert-danger
 
 
 *** Test Cases ***
-Login with user ${username} and password ${password}
+# If there are no test case name in test.csv, the sentence below will be executing and writting in the log file
+Login with user ${username} and password ${password}     xyc    12345
 
 *** Keywords ***
 Validate UnSuccesful login
